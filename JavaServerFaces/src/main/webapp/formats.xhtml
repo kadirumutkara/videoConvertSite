@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>VideoConvertSite: YouTube Video Downloader, Download
+	Youtube, Facebook, VK, BiliBili videos</title>
+<meta name="description"
+	content="DownloadConvertSite YouTube Video Downloader allows you to download online videos from YouTube,Reddit ,Bilibili ,tictoc VK download videos and many streaming video websites.Youtube downloader This best YouTube video converter enables you to convert YouTube to MP4 fast &amp; secure. Also supports more than 1000 website" />
+<meta name="keywords"
+	content="youtube downloader, download online videos,  youtube downloader,vk downloader soundhound downloader,bilibili downloader,xhamster downloader,xvideos downloader youtube converter, download facebook videos, download youtube videos, Youtube to MP4, convert youtube mp4, videodownload site alternative" />
+<meta name="robots" content="All,index,follow" />
+
+	<!-- Bootstrap core CSS -->
+	<link href="resources/vendor/bootstrap/css/bootstrap.min.css"
+		rel="stylesheet"></link>
+
+	<!-- Custom fonts for this template -->
+	<link href="resources/vendor/fontawesome-free/css/all.min.css"
+		rel="stylesheet"></link>
+	<link
+		href="resources/vendor/simple-line-icons/css/simple-line-icons.css"
+		rel="stylesheet" type="text/css"></link>
+	<link
+		href="resources/https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+		rel="stylesheet" type="text/css"></link>
+	<!-- Custom styles for this template -->
+	<script src="resources/vendor/jquery/jquery.min.js"></script>
+	<link href="resources/css/landing-page.min.css" rel="stylesheet"></link>
+	<link href="resources/css/internal.css" rel="stylesheet"></link>
+	<link href="resources/css/supported.css" rel="stylesheet"></link>
+	<script type="text/javascript">
+		function start() {
+			$('#download-modal').modal('show');//('toggle')
+		}
+		function stop() {
+			$('#download-modal').modal('toggle');//('toggle')
+
+		}
+		function aFunction(data) {
+		    var status = data.status;
+		    switch (status) {
+		        case "begin":   alert('before request');
+		                            break;
+		        case "complete": alert('after request');
+		                      break;
+		        case "success": alert('dom updated');
+		        break ;
+		        		                  
+		    }
+		}
+		
+	</script>
+</h:head>
+<body>
+	<!-- Navigation-->
+	<nav class="navbar navbar-blue bg-blue static-top">
+	<div class="container">
+		<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+			<a class="navbar-brand" href="index.xhtml">VideoConvertSite</a>
+		</div>
+		<div class="navbar-header"></div>
+		<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+			<ul class="list-inline mb-2">
+				<li class="list-inline-item"><a href="about.xhtml">About</a></li>
+				<li class="list-inline-item">&sdot;</li>
+				<li class="list-inline-item"><a href="terms.xhtml">Terms of
+						Use</a></li>
+				<li class="list-inline-item">&sdot;</li>
+				<li class="list-inline-item"><a href="privacy.xhtml">Privacy
+						Policy</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+	<!-- Icons Grid -->
+	<section class="features-icons bg-light text-center">
+	<div class="container">
+	<div class="row">
+			<div class="col-md-10">
+				<h2 class="mb-4">Please select **BEST VIDEO** format for ideal video.</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<div>
+					<h3>Video Title:</h3>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div style="">
+					<p:outputLabel id="url_text" styleClass="input_text"
+						value="#{downloadController.videoDefinitionStruct.title}"></p:outputLabel>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<p:graphicImage
+					value="#{downloadController.videoDefinitionStruct.picture_url}"
+					width="%100" height="200" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<p:dataTable id="videoDT" var="format"
+					value="#{downloadController.videoDefinitionStruct.formats}">
+					<f:facet name="header">
+            	Video Types
+    			    </f:facet>
+					<p:column headerText="Id">
+						<h:outputText value="#{format.formatId}" />
+					</p:column>
+					<p:column headerText="Size">
+						<h:outputText value="#{format.filesize}" />
+					</p:column>
+					<p:column headerText="Format"
+						style="height:50px;width:150px;text-align: center">
+						<h:outputText value="#{format.format}" />
+					</p:column>
+					<p:column style="width:150px;text-align: center"
+						headerText="Download">
+						<h:form>
+							<h:commandButton value="Download"
+								action="#{downloadController.process}" ajax="false" styleClass="btn btn-primary btn-lg"
+								id="BUTTON_INT">
+								<f:setPropertyActionListener value="#{format.formatId}"
+									target="#{downloadController.videoDefinitionStruct.selectedFormatid}" />
+								<f:setPropertyActionListener value="video"
+									target="#{downloadController.videoDefinitionStruct.formatType}" />		
+							</h:commandButton>
+						</h:form>
+					</p:column>
+				</p:dataTable>
+			</div>
+			<div class="col-md-5">
+				<p:dataTable id="audioDT" var="audio"
+					value="#{downloadController.videoDefinitionStruct.audioFormats}">
+					<f:facet name="header">
+            	Audio Types 
+    			    </f:facet>
+					<p:column headerText="Id">
+						<h:outputText value="#{audio.formatId}" />
+					</p:column>
+					<p:column headerText="Size">
+						<h:outputText value="#{audio.filesize}" />
+					</p:column>
+					<p:column headerText="Format" style="width=100px ">
+						<h:outputText value="#{audio.format}" />
+					</p:column>
+					<p:column style="width:150px;text-align: center"
+						headerText="Download">
+						<h:form>
+							<h:commandButton value="Download"
+								action="#{downloadController.process}"
+								styleClass="btn btn-primary btn-lg" id="BUTTON_INT">
+								<f:setPropertyActionListener value="#{audio.formatId}"
+									target="#{downloadController.videoDefinitionStruct.selectedFormatid}" />
+								<f:setPropertyActionListener value="audio"
+									target="#{downloadController.videoDefinitionStruct.formatType}" />	
+							</h:commandButton>
+						</h:form>
+					</p:column>
+				</p:dataTable>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!-- Footer -->
+	<footer class="footer bg-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+				<ul class="list-inline mb-2">
+					<li class="list-inline-item"><a href="about.xhtml">About</a></li>
+					<li class="list-inline-item">&sdot;</li>
+					<li class="list-inline-item"><a href="terms.xhtml">Terms
+							of Use</a></li>
+					<li class="list-inline-item">&sdot;</li>
+					<li class="list-inline-item"><a href="privacy.xhtml">Privacy
+							Policy</a></li>
+				</ul>
+				<p class="text-muted small mb-4 mb-lg-0">&copy; Your Website
+					2019. All Rights Reserved.</p>
+			</div>
+			<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item mr-3"><a
+						href="https://www.facebook.com/" target="_blank" rel="nofollow">
+							<i class="fab fa-facebook fa-2x fa-fw"></i>
+					</a></li>
+					<li class="list-inline-item mr-3"><a
+						href="https://www.twitter.com/" target="_blank" rel="nofollow">
+							<i class="fab fa-twitter-square fa-2x fa-fw"></i>
+					</a></li>
+					<li class="list-inline-item"><a
+						href="https://www.instagram.com/" target="_blank" rel="nofollow">
+							<i class="fab fa-instagram fa-2x fa-fw"></i>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</footer>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="download-modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header justify-content-center">
+					<h5 class="modal-title" id="exampleModalLongTitle">Download
+						will start... Please Wait...</h5>
+
+				</div>
+				<div class="modal-body">
+					<div class="progress">
+						<div
+							class="progress-bar progress-bar-striped bg-success progress-bar-animated"
+							role="progressbar" aria-valuenow="100" aria-valuemin="0"
+							aria-valuemax="100" style="width: 100%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap core JavaScript -->
+	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

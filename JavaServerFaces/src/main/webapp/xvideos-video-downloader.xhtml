@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>VideoConvertSite: YouTube Video Downloader, Download
+	Youtube, Facebook, VK, BiliBili videos</title>
+<meta name="description"
+	content="DownloadConvertSite YouTube Video Downloader allows you to download online videos from YouTube,Reddit ,Bilibili ,tictoc VK download videos and many streaming video websites.Youtube downloader This best YouTube video converter enables you to convert YouTube to MP4 fast &amp; secure. Also supports more than 1000 website" />
+<meta name="keywords"
+	content="xvideos video download ,xvideos video convert, download xvideos online videos, xvideos downloader,video downloader,xvideos video downloader xvideos converter, download facebook videos, download xvideos videos, xvideos to MP4, convert xvideos mp4, videodownload site alternative" />
+<meta name="robots" content="All,index,follow" />
+
+<!-- Bootstrap core CSS -->
+<link href="resources/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet"></link>
+
+<!-- Custom fonts for this template -->
+<link href="resources/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet"></link>
+<link
+	href="resources/vendor/simple-line-icons/css/simple-line-icons.css"
+	rel="stylesheet" type="text/css"></link>
+<link
+	href="resources/https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+	rel="stylesheet" type="text/css"></link>
+
+<!-- Custom styles for this template -->
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<link href="resources/css/landing-page.min.css" rel="stylesheet"></link>
+<link href="resources/css/internal.css" rel="stylesheet"></link>
+<link href="resources/css/supported.css" rel="stylesheet"></link>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="async"
+	src="https://www.googletagmanager.com/gtag/js?id=UA-143710794-1">
+	
+</script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-143710794-1');
+</script>
+<script asyncasync="async"
+	src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client : "ca-pub-7662515026087049",
+		enable_page_level_ads : true
+	});
+</script>
+
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function showDownloadModal() {
+		$('#download-modal').modal('show');//('toggle')
+	}
+	function onComplateModal() {
+		$('#download-modal').modal('toggle');//('toggle')
+		
+	}
+</script>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg bg-secondary bg-white text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="index.xhtml">Video Converter</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Video Converter
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.xhtml">Youtube Video Downloader</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="bilibili-video-downloader.xhtml">BiliBili Video Downloader</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="vk-video-downloader.xhtml">Vkontakte Video Downloader</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="instagram-video-downloader.xhtml">Instagram Video Downloader</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="facebook-video-downloader.xhtml">Facebook Video Downloader</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="soundcloud-song-downloader.xhtml">SoundCloud Song Downloader</a>
+                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="xvideos-video-downloader.xhtml">Xvideos Video Downloader</a>
+                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="xhamster-video-downloader.xhtml">Xhamster Video Downloader</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+	<!-- Masthead -->
+	<header class="masthead text-white text-center">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 mx-auto">
+				<h1 class="mb-5">Download your favorite XVIDEOS videos</h1>
+			</div>
+			<div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+				<h:form id="form_check">
+					<div class="form-row">
+						<div class="col-12 col-md-9 col-sm-6 ">
+							<h:inputText id="url_text" styleClass="input_text"
+								placeholder="Search" value="#{downloadController.videoDefinitionStruct.url}"></h:inputText>
+						</div>
+						<div class="col-12 col-md-3 col-sm-6">
+							<h:commandButton value="Just Download" id="BUTTON_INT"
+								styleClass="btn btn-primary btn-lg" onclick="showDownloadModal();"
+								action="#{downloadController.getImagesandFormats}">
+							</h:commandButton>
+						</div>
+					</div>
+					<img id="ajaxloader" src="resources/img/ajaxloader.gif"
+						style="display: none;" />
+				</h:form>
+			</div>
+		</div>
+	</div>
+	</header>
+
+	<!-- Icons Grid -->
+	<section class="features-icons bg-light text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+					<div class="features-icons-icon d-flex">
+						<i class="icon-screen-desktop m-auto text-primary"></i>
+					</div>
+					<h3>Supported too much site</h3>
+					<p class="lead mb-0">Unlimitedly free conversions and downloads.</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+					<div class="features-icons-icon d-flex">
+						<i class="icon-layers m-auto text-primary"></i>
+					</div>
+					<h3>Always Free</h3>
+					<p class="lead mb-0">We always keep it free.</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="features-icons-item mx-auto mb-0 mb-lg-3">
+					<div class="features-icons-icon d-flex">
+						<i class="icon-check m-auto text-primary"></i>
+					</div>
+					<h3>Easy to Use</h3>
+					<p class="lead mb-0">Just copy link from site and copy the text
+						field and download</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+
+
+	<div class="support-site clearfix">
+		<div class="container">
+			<div class="title">Video Download Site Provide Thousands Online
+				Video Sites</div>
+			<ul class="list clearfix">
+				<li><a href="https://www.youtube.com/" target="_blank"
+					rel="nofollow"> YouTube</a></li>
+				<li><a href="https://www.facebook.com/" target="_blank"
+					rel="nofollow">Facebook</a></li>
+				<li><a href="https://vimeo.com/" target="_blank" rel="nofollow">Vimeo</a></li>
+				<li><a href="https://vk.com/" target="_blank" rel="nofollow">VK</a></li>
+				<li><a href="https://www.lynda.com/" target="_blank"
+					rel="nofollow">Lynda</a></li>
+				<li><a href="https://www.vevo.com/" target="_blank"
+					rel="nofollow">VEVO</a></li>
+				<li><a href="https://twitter.com/" target="_blank"
+					rel="nofollow">Twitter</a></li>
+				<li><a href="https://soundcloud.com/" target="_blank"
+					rel="nofollow">SoundCloud</a></li>
+				<li><a href="http://www.espn.com/" target="_blank"
+					rel="nofollow">ESPN</a></li>
+				<li><a href="https://www.reddit.com/" target="_blank"
+					rel="nofollow">Reddit</a></li>
+				<li><a href="https://www.foxnews.com/" target="_blank"
+					rel="nofollow">Foxnews</a></li>
+				<li><a href="https://www.instagram.com/" target="_blank"
+					rel="nofollow">Instagram</a></li>
+				<li><a href="https://www.liveleak.com/" target="_blank"
+					rel="nofollow">Liveleak</a></li>
+				<li><a href="http://www.mtv.com/shows" target="_blank"
+					rel="nofollow">MTV</a></li>
+				<li><a href="https://www.nbc.com/" target="_blank"
+					rel="nofollow">NBC</a></li>
+				<li><a href="https://www.bilibili.com/" target="_blank"
+					rel="nofollow">Bilibili</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- Call to Action -->
+	<section class="call-to-action text-white text-center">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 mx-auto">
+				<h2 class="mb-4">Ready to get started?</h2>
+				<h2 class="mb-4">Download now!</h2>
+			</div>
+			<div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+				<form>
+					<button type="submit" class="btn btn-lg btn-lg btn-primary"
+						href="index.xhtml">START!</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer bg-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+				<ul class="list-inline mb-2">
+					<li class="list-inline-item"><a href="about.xhtml">About</a></li>
+					<li class="list-inline-item">&sdot;</li>
+					<li class="list-inline-item"><a href="terms.xhtml">Terms
+							of Use</a></li>
+					<li class="list-inline-item">&sdot;</li>
+					<li class="list-inline-item"><a href="privacy.xhtml">Privacy
+							Policy</a></li>
+				</ul>
+				<p class="text-muted small mb-4 mb-lg-0">&copy; Your Website
+					2019. All Rights Reserved.</p>
+			</div>
+			<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item mr-3"><a
+						href="https://www.facebook.com/" target="_blank" rel="nofollow">
+							<i class="fab fa-facebook fa-2x fa-fw"></i>
+					</a></li>
+					<li class="list-inline-item mr-3"><a
+						href="https://www.twitter.com/" target="_blank" rel="nofollow">
+							<i class="fab fa-twitter-square fa-2x fa-fw"></i>
+					</a></li>
+					<li class="list-inline-item"><a
+						href="https://www.instagram.com/" target="_blank" rel="nofollow">
+							<i class="fab fa-instagram fa-2x fa-fw"></i>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</footer>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="download-modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header justify-content-center">
+					<h5 class="modal-title" id="exampleModalLongTitle">Download
+						will start... Please Wait...</h5>
+
+				</div>
+				<div class="modal-body">
+					<div class="progress">
+						<div
+							class="progress-bar progress-bar-striped bg-success progress-bar-animated"
+							role="progressbar" aria-valuenow="100" aria-valuemin="0"
+							aria-valuemax="100" style="width: 100%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+
+</html>

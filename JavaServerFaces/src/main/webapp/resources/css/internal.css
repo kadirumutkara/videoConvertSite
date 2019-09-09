@@ -1,0 +1,38 @@
+.button_internal {
+	width: 100%;
+
+} 
+.input_text {
+	width: 100%;
+	color: rgb(73, 80, 87);
+	display: block;
+	height: 48px;
+	text-decoration: none solid rgb(73, 80, 87);
+	text-size-adjust: 100%;
+	column-rule-color: rgb(73, 80, 87);
+	perspective-origin: 236.875px 24px;
+	transform-origin: 236.875px 24px;
+	caret-color: rgb(73, 80, 87);
+	background: rgb(255, 255, 255) none repeat scroll 0% 0%/auto padding-box
+		padding-box;
+	border: 1px solid rgb(206, 212, 218);
+	border-radius: 4.8px 4.8px 4.8px 4.8px;
+	font: normal normal 400 normal 20px/30px Lato, "Helvetica Neue",
+		Helvetica, Arial, sans-serif;
+	outline: rgb(73, 80, 87) none 0px;
+	padding: 8px 16px;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s
+		ease-in-out 0s;
+} 
+::label {
+	color: red;
+	opacity: 0.5; /* Firefox */
+}
+
+:-ms-label { /* Internet Explorer 10-11 */
+	color: red;
+}
+
+::-ms-input-label { /* Microsoft Edge */
+	color: red;
+}

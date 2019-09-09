@@ -1,0 +1,21 @@
+.support-site {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.support-site .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.support-site li {
+    float: left;
+    padding: 5px 0;
+    width: 25%;
+}
+.support-site ul {
+    list-style: none;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
